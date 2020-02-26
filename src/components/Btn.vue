@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style lang="scss" scoped>
 button {
     border-radius: 5px;
     cursor: pointer;

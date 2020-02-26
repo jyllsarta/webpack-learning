@@ -28,12 +28,13 @@ export default {
 }
 </script>
 
-<style scope>
-.container {
-    text-align: center;
-    width: 500px;
+<style lang="scss" scoped>
+body {
+    .container {
+        text-align: center;
+        width: 600px;
+    }
 }
-
 .count {
     font-size: 35px;
     margin: 10px;
