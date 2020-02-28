@@ -1,6 +1,8 @@
 <template lang="pug">
 div
-  h1 Hello world!
+  h1 Hello world!!
+  p
+    | {{count}}
 </template>
 
 <script>
@@ -12,7 +14,7 @@ export default {
     },
     data () {
         return {
-            count: 0,
+            count: 5,
         }
     },
     methods: {

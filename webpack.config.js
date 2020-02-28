@@ -41,4 +41,11 @@ module.exports = {
             "vue$": "vue/dist/vue.esm.js"
         }
     },
+    devServer: {
+        compress: true,
+        port: 9000,
+        open: true,
+        publicPath: '/dist/',   
+        hot: true,
+    },
 }
