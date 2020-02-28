@@ -1,11 +1,6 @@
-<template>
-    <div id="app" class="container">
-        <h1>My Counter</h1>
-        <hr>
-        <p class="count">{{ count }}</p>
-        <Btn class="blue" @handleCount="doCount('up')">Up</Btn>
-        <Btn class="green" @handleCount="doCount('down')">Down</Btn>
-    </div>
+<template lang="pug">
+div
+  h1 Hello world!
 </template>
 
 <script>
