@@ -1,0 +1,98 @@
+@import "constants";
+#app{
+  position: relative;
+  margin: 50px auto;
+  // TODO: ウィンドウサイズはデバッグしやすいように小さめにしているけど、将来的に再検討する
+  width: $window-width;
+  height: $window-height + $guide-height;
+  background-color: $background;
+  color: $white;
+  font-family: "Roboto", 'M PLUS Rounded 1c', sans-serif;
+  font-size: 16px;
+  .game{
+    position: relative;
+    width: $window-width;
+    height: $window-height;
+  }
+
+  .open_window-enter-active {
+    transition: all .1s;
+  }
+  .open_window-leave-active {
+    transition: all .1s;
+  }
+  .open_window-enter{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  .open_window-leave-to{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+}
+
+.window{
+  position: absolute;
+  border: 1px solid $gray3;
+  border-radius: $radius;
+  padding: $thin_space;
+}
+
+.menu{
+  .back{
+    position: absolute;
+    top: -80px;
+    // calcするためにwindow-widthをベタ書きしてしまった...
+    left: calc((1024px - 100vw) / 2);
+    width: 100vw;
+    height: $window-height + 100px;
+  }
+  .title_area{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    .back_button{
+      width:  8%;
+      height: $font-size-large * 1.5 + 2px;
+      border-radius: $radius;
+      border: 1px solid $gray2;
+      text-align: center;
+      font-size: $font-size-large;
+      line-height: 150%;
+      margin-right: $space;
+      background-color: $clickable-color;
+      &::after{
+        content: "◀";
+      }
+      &:hover{
+        filter: brightness(110%);
+        transform: scale(1.02);
+      }
+
+    }
+    .title{
+      font-size: $font-size-large;
+    }
+  }
+
+  .content{
+    position: absolute;
+    width: $window-width - $space * 4;
+    height: $window-height - $space * 4;
+    background-color: $background;
+    top: $space * 2;
+    left: $space * 2;
+    opacity: $opacity;
+    padding: $space;
+  }
+}
+
+.clickable{
+  background-color: $clickable-color;
+  border-radius: $radius;
+  &:hover{
+    filter: brightness(110%);
+    transform: scale(1.02);
+  }
+}
