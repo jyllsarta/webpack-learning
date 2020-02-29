@@ -2,17 +2,18 @@
   .field
     .ground
       img.spica(
-        src="images/ui/spica.png"
+        :src="Server.asset + 'images/ui/spica.png'"
         :style="{transform: 'translateX(' + $store.state.ui.position.spica + 'px) scale('+ $store.state.ui.direction.spica * -1 +', 1)'}"
       )
       img.tirol(
-        src="images/ui/tirol.png"
+        :src="Server.asset + 'images/ui/tirol.png'"
         :style="{transform: 'translateX(' + $store.state.ui.position.tirol + 'px) scale('+ $store.state.ui.direction.tirol * -1 +', 1)'}"
       )
 </template>
 
 <script lang="ts">
 import Constants from "./packs/constants.ts";
+import Server from "./packs/Server.ts";
 import store from './packs/store.ts'
 
 export default {
@@ -43,6 +44,14 @@ export default {
           this.$store.commit("reflectCharacter", {characterName: name});
         }
       });
+    },
+  },
+  computed: {
+    currentItem(){
+      return this.$store.getters.getUserItem(this.$store.state.ui.equip_window.selecting_item_id);
+    },
+    Server(){
+      return Server;
     },
   }
 }

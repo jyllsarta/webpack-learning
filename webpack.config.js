@@ -46,6 +46,5 @@ module.exports = {
         port: 9000,
         open: true,
         publicPath: '/dist/',   
-        hot: true,
     },
 }
